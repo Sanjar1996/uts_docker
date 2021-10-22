@@ -1,0 +1,214 @@
+{% extends 'base.html' %}
+{% load active_link_tags %}
+{% load static %}
+{% block content %}
+
+<!-- ======= Hero Section ======= -->
+  <section id="hero">
+    <div id="heroCarousel" data-bs-interval="5000" class="carousel slide carousel-fade" data-bs-ride="carousel">
+
+        <!-- Slide 1 -->
+        <div class="carousel-item active" style="background-image: url({% static 'assets/img/slide/slide-1.jpg' %})">
+          <div class="carousel-container">
+            <div class="container">
+              <h2 class="animate__animated animate__fadeInDown">"O'RMONTEXNOSERVIS" <span>DAVLAT UNITAR KORXONASI</span></h2>
+            </div>
+          </div>
+        </div>
+    </div>
+  </section><!-- End Hero -->
+
+
+  <main id="main">
+
+    <!-- ======= About Section ======= -->
+    <section id="about" class="about">
+      <div class="container">
+
+        <div class="row content">
+{#          <div class="col-lg-12">#}
+{#            <h2>"O'RMONTEXNOSERVIS" DAVLAT  &nbsp &nbsp&nbsp &nbsp &nbsp &nbsp&nbsp &nbspUNITAR KORXONASI</h2>#}
+{#            <h3>O‘zbekiston Respublikasi Vazirlar Mahkamasining  &nbsp &nbsp &nbsp &nbsp  455-qarori 1-bandiga muvofiq:</h3>#}
+{#          </div>#}
+          <div class="col-lg-12 pt-4 pt-lg-0">
+            <p>
+                <p><b><h4 style="font-family: Arial">"O'RMONTEXNOSERVIS" davlat unitar korxonasi O‘zbekiston Respublikasi Vazirlar Mahkamasining 455-qarori 1-bandiga muvofiq:</h4></b></p>
+
+             <h5>&nbsp &nbsp &nbsp O‘zbekiston Respublikasi O‘rmon xo‘jaligi davlat qo‘mitasi tizimida zamonaviy axborot-kommunikatsiya texnologiyalarini yanada rivojlantirish, o‘rmon xo‘jaligini yuritish amaliyotiga ilm-fan yutuqlari va ilg‘or tajribani joriy etish maqsadida Vazirlar Mahkamasi qaror qiladi:
+                 <br> &nbsp &nbsp &nbsp O‘zbekiston Respublikasi O‘rmon xo‘jaligi davlat qo‘mitasi, Axborot texnologiyalari va kommunikatsiyalarini rivojlantirish vazirligi, Innovatsion rivojlanish vazirligining O‘zbekiston Respublikasi O‘rmon xo‘jaligi davlat qo‘mitasi tizimida “O‘rmontexnoservis” davlat unitar korxonasini (keyingi o‘rinlarda “O‘rmontexnoservis” DUK deb ataladi) tashkil etish to‘g‘risidagi taklifiga rozilik berilsin.</h5>
+            </p>
+          </div>
+        </div>
+
+      </div>
+    </section><!-- End About Section -->
+
+    <!-- ======= Services Section ======= -->
+    <section id="services" class="services">
+      <div class="container">
+        <div class="row">
+        <center><section><h1><b>Me'yoriy hujjatlar</b></h1></section></center>
+            {% for data in qonun %}
+            <div class="col-md-6">
+            <div class="icon-box">
+              <i class="{{ data.icon }}"></i>
+              <h4><a href="{{ data.link }}">{{ data.title }}</a></h4>
+              <p>{{ data.sub_title }}</p>
+            </div>
+          </div>
+            {% endfor %}
+      </div>
+      </div>
+    </section><!-- End Services Section -->
+
+{#    <!-- ======= Portfolio Section ======= -->#}
+{#    <section id="portfolio" class="portfolio">#}
+{#      <div class="container">#}
+{##}
+{#        <div class="row">#}
+{#          <div class="col-lg-12 d-flex justify-content-center">#}
+{#            <ul id="portfolio-flters">#}
+{#              <li data-filter="*" class="filter-active">All</li>#}
+{#              <li data-filter=".filter-app">App</li>#}
+{#              <li data-filter=".filter-card">Card</li>#}
+{#              <li data-filter=".filter-web">Web</li>#}
+{#            </ul>#}
+{#          </div>#}
+{#        </div>#}
+{##}
+{#        <div class="row portfolio-container">#}
+{##}
+{#          <div class="col-lg-4 col-md-6 portfolio-item filter-app">#}
+{#            <div class="portfolio-wrap">#}
+{#              <img src="{% static 'assets/img/portfolio/portfolio-1.jpg' %}" class="img-fluid" alt="">#}
+{#              <div class="portfolio-info">#}
+{#                <h4>App 1</h4>#}
+{#                <p>App</p>#}
+{#                <div class="portfolio-links">#}
+{#                  <a href="{% static 'assets/img/portfolio/portfolio-1.jpg' %}" data-gallery="portfolioGallery" class="portfolio-lightbox" title="App 1"><i class="bx bx-plus"></i></a>#}
+{#                  <a href="portfolio-details.html" class="portfolio-details-lightbox" data-glightbox="type: external" title="Portfolio Details"><i class="bx bx-link"></i></a>#}
+{#                </div>#}
+{#              </div>#}
+{#            </div>#}
+{#          </div>#}
+{##}
+{#          <div class="col-lg-4 col-md-6 portfolio-item filter-web">#}
+{#            <div class="portfolio-wrap">#}
+{#              <img src="{% static 'assets/img/portfolio/portfolio-2.jpg' %}" class="img-fluid" alt="">#}
+{#              <div class="portfolio-info">#}
+{#                <h4>Web 3</h4>#}
+{#                <p>Web</p>#}
+{#                <div class="portfolio-links">#}
+{#                  <a href="{% static 'assets/img/portfolio/portfolio-2.jpg' %}" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Web 3"><i class="bx bx-plus"></i></a>#}
+{#                  <a href="portfolio-details.html" class="portfolio-details-lightbox" data-glightbox="type: external" title="Portfolio Details"><i class="bx bx-link"></i></a>#}
+{#                </div>#}
+{#              </div>#}
+{#            </div>#}
+{#          </div>#}
+{##}
+{#          <div class="col-lg-4 col-md-6 portfolio-item filter-app">#}
+{#            <div class="portfolio-wrap">#}
+{#              <img src="{% static 'assets/img/portfolio/portfolio-3.jpg' %}" class="img-fluid" alt="">#}
+{#              <div class="portfolio-info">#}
+{#                <h4>App 2</h4>#}
+{#                <p>App</p>#}
+{#                <div class="portfolio-links">#}
+{#                  <a href="{% static 'assets/img/portfolio/portfolio-3.jpg' %}" data-gallery="portfolioGallery" class="portfolio-lightbox" title="App 2"><i class="bx bx-plus"></i></a>#}
+{#                  <a href="portfolio-details.html" class="portfolio-details-lightbox" data-glightbox="type: external" title="Portfolio Details"><i class="bx bx-link"></i></a>#}
+{#                </div>#}
+{#              </div>#}
+{#            </div>#}
+{#          </div>#}
+{##}
+{#          <div class="col-lg-4 col-md-6 portfolio-item filter-card">#}
+{#            <div class="portfolio-wrap">#}
+{#              <img src="{% static 'assets/img/portfolio/portfolio-4.jpg' %}" class="img-fluid" alt="">#}
+{#              <div class="portfolio-info">#}
+{#                <h4>Card 2</h4>#}
+{#                <p>Card</p>#}
+{#                <div class="portfolio-links">#}
+{#                  <a href="{% static 'assets/img/portfolio/portfolio-4.jpg' %}" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Card 2"><i class="bx bx-plus"></i></a>#}
+{#                  <a href="portfolio-details.html" class="portfolio-details-lightbox" data-glightbox="type: external" title="Portfolio Details"><i class="bx bx-link"></i></a>#}
+{#                </div>#}
+{#              </div>#}
+{#            </div>#}
+{#          </div>#}
+{##}
+{#          <div class="col-lg-4 col-md-6 portfolio-item filter-web">#}
+{#            <div class="portfolio-wrap">#}
+{#              <img src="{% static 'assets/img/portfolio/portfolio-5.jpg' %}" class="img-fluid" alt="">#}
+{#              <div class="portfolio-info">#}
+{#                <h4>Web 2</h4>#}
+{#                <p>Web</p>#}
+{#                <div class="portfolio-links">#}
+{#                  <a href="{% static 'assets/img/portfolio/portfolio-5.jpg' %}" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Web 2"><i class="bx bx-plus"></i></a>#}
+{#                  <a href="portfolio-details.html" class="portfolio-details-lightbox" data-glightbox="type: external" title="Portfolio Details"><i class="bx bx-link"></i></a>#}
+{#                </div>#}
+{#              </div>#}
+{#            </div>#}
+{#          </div>#}
+{##}
+{#          <div class="col-lg-4 col-md-6 portfolio-item filter-app">#}
+{#            <div class="portfolio-wrap">#}
+{#              <img src="{% static 'assets/img/portfolio/portfolio-6.jpg' %}" class="img-fluid" alt="">#}
+{#              <div class="portfolio-info">#}
+{#                <h4>App 3</h4>#}
+{#                <p>App</p>#}
+{#                <div class="portfolio-links">#}
+{#                  <a href="{% static 'assets/img/portfolio/portfolio-6.jpg' %}" data-gallery="portfolioGallery" class="portfolio-lightbox" title="App 3"><i class="bx bx-plus"></i></a>#}
+{#                  <a href="portfolio-details.html" class="portfolio-details-lightbox" data-glightbox="type: external" title="Portfolio Details"><i class="bx bx-link"></i></a>#}
+{#                </div>#}
+{#              </div>#}
+{#            </div>#}
+{#          </div>#}
+{##}
+{#          <div class="col-lg-4 col-md-6 portfolio-item filter-card">#}
+{#            <div class="portfolio-wrap">#}
+{#              <img src="{% static 'assets/img/portfolio/portfolio-7.jpg' %}" class="img-fluid" alt="">#}
+{#              <div class="portfolio-info">#}
+{#                <h4>Card 1</h4>#}
+{#                <p>Card</p>#}
+{#                <div class="portfolio-links">#}
+{#                  <a href="{% static 'assets/img/portfolio/portfolio-7.jpg' %}" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Card 1"><i class="bx bx-plus"></i></a>#}
+{#                  <a href="portfolio-details.html" class="portfolio-details-lightbox" data-glightbox="type: external" title="Portfolio Details"><i class="bx bx-link"></i></a>#}
+{#                </div>#}
+{#              </div>#}
+{#            </div>#}
+{#          </div>#}
+{##}
+{#          <div class="col-lg-4 col-md-6 portfolio-item filter-card">#}
+{#            <div class="portfolio-wrap">#}
+{#              <img src="{% static 'assets/img/portfolio/portfolio-8.jpg' %}" class="img-fluid" alt="">#}
+{#              <div class="portfolio-info">#}
+{#                <h4>Card 3</h4>#}
+{#                <p>Card</p>#}
+{#                <div class="portfolio-links">#}
+{#                  <a href="{% static 'assets/img/portfolio/portfolio-8.jpg' %}" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Card 3"><i class="bx bx-plus"></i></a>#}
+{#                  <a href="portfolio-details.html" class="portfolio-details-lightbox" data-glightbox="type: external" title="Portfolio Details"><i class="bx bx-link"></i></a>#}
+{#                </div>#}
+{#              </div>#}
+{#            </div>#}
+{#          </div>#}
+{##}
+{#          <div class="col-lg-4 col-md-6 portfolio-item filter-web">#}
+{#            <div class="portfolio-wrap">#}
+{#              <img src="{% static 'assets/img/portfolio/portfolio-9.jpg' %}" class="img-fluid" alt="">#}
+{#              <div class="portfolio-info">#}
+{#                <h4>Web 3</h4>#}
+{#                <p>Web</p>#}
+{#                <div class="portfolio-links">#}
+{#                  <a href="{% static 'assets/img/portfolio/portfolio-9.jpg' %}" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Web 3"><i class="bx bx-plus"></i></a>#}
+{#                  <a href="portfolio-details.html" class="portfolio-details-lightbox" data-glightbox="type: external" title="Portfolio Details"><i class="bx bx-link"></i></a>#}
+{#                </div>#}
+{#              </div>#}
+{#            </div>#}
+{#          </div>#}
+{##}
+{#        </div>#}
+{##}
+{#      </div>#}
+{#    </section><!-- End Portfolio Section -->#}
+
+  </main><!-- End #main -->
+
+ {% endblock content %}

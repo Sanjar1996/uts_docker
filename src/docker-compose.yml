@@ -1,0 +1,29 @@
+version: '3'
+
+services:
+  utsdb:
+    container_name: utsdb
+    image: postgres
+    environment:
+      POSTGRES_DB: db_uts
+      POSTGRES_USER: utsuser
+      POSTGRES_PASSWORD: utspass
+    volumes:
+      - postgres_data:/var/lib/postgresql/datauts/
+    ports:
+      - "5432:5432"
+  utsweb:
+    container_name: uts
+    build: .
+    command: python manage.py runserver 0.0.0.0:8000
+    volumes:
+      - ./:/code
+    ports:
+      - "8000:8000"
+    depends_on:
+      - utsdb
+    env_file:
+      - ./.env.dev
+
+volumes:
+  postgres_data:
