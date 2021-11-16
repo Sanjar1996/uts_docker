@@ -48,7 +48,7 @@
 
       <nav id="navbar" class="navbar">
         <ul>
-          <li><a href="{% url 'home' %}" class="{% active_link 'home' %}">Bosh saxifa</a></li>
+          <li><a href="{% url 'home' %}"{% if forloop.firts %} class="{% active_link 'home' %}" {% endif %} >Bosh saxifa</a></li>
 
           <li class="dropdown"><a href="{% url 'about' %}" class="{% active_link 'about' %}"><span>Biz haqimizda</span> <i class="bi bi-chevron-down"></i></a>
             <ul>
@@ -66,7 +66,7 @@
           <li><a href="{% url 'service' %}" class="{% active_link 'service' %}" >Xizmat turlari</a></li>
           <li><a href="{% url 'price' %}" class="{% active_link 'price' %}">Ochiq ma'lumotlar portali</a></li>
 
-          <li><a href="{% url 'contact' %}">Biz bilan aloqa</a></li>
+          <li><a href="{% url 'contact' %}" class="{% active_link 'contact' %}">Biz bilan aloqa</a></li>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav><!-- .navbar -->
