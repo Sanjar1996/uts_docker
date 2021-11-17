@@ -39,15 +39,15 @@ class HomeVideo(models.Model):
         return self.title
 
 
-class PriceModel(models.Model):
+class ByudjetModel(models.Model):
     title = models.CharField(max_length=50)
 
     def __str__(self):
         return self.title
 
 
-class PricingPlan(models.Model):
-    title = models.ManyToManyField(PriceModel)
+class ByudjetPlan(models.Model):
+    title = models.ManyToManyField(ByudjetModel)
     plan = models.CharField(max_length=75)
     file = models.FileField(upload_to='files/', blank=True)
 

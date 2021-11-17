@@ -18,8 +18,8 @@ def index(request):
 
 
 def price(request):
-    pricemodel = PriceModel.objects.all()
-    priceplan = PricingPlan.objects.all()
+    pricemodel = ByudjetModel.objects.all()
+    priceplan = ByudjetPlan.objects.all()
     # faq_model = FAQModel.objects.all()
     context = {
         'pricemodel': pricemodel,
@@ -70,8 +70,8 @@ def service(request):
 
 
 def price_plan(request, pk):
-    pricemodel = PriceModel.objects.get(id=pk)
-    plan = PricingPlan.objects.filter(id=pricemodel.id)
+    pricemodel = ByudjetModel.objects.get(id=pk)
+    plan = ByudjetPlan.objects.filter(id=pricemodel.id)
     context = {
         'plan': plan,
         'pricemodel': pricemodel,
