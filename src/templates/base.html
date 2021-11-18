@@ -48,7 +48,7 @@
 
       <nav id="navbar" class="navbar">
         <ul>
-          <li><a href="{% url 'home' %}"{% if forloop.firts %} class="{% active_link 'home' %}" {% endif %} >Bosh saxifa</a></li>
+          <li><a href="{% url 'home' %}"{% if forloop.firts %} class="{% active_link 'home' %}" {% endif %} >Bosh sahifa</a></li>
 
           <li class="dropdown"><a href="{% url 'about' %}" class="{% active_link 'about' %}"><span>Biz haqimizda</span> <i class="bi bi-chevron-down"></i></a>
             <ul>
@@ -57,7 +57,7 @@
               <li><a href="{% url 'tuzilma' %}" class="{% active_link 'tuzilma' %}">Tuzilma</a></li>
             </ul>
           </li>
-            <li class="dropdown"><a href="#"><span>Xujjatlar</span><i class="bi bi-chevron-down"></i></a>
+            <li class="dropdown"><a href="#"><span>Hujjatlar</span><i class="bi bi-chevron-down"></i></a>
             <ul>
                 <li><a href="{% url 'farmon' %}">Prezident farmoni</a></li>
                 <li><a href="{% url 'qaror' %}">Qarorlar</a></li>
@@ -105,7 +105,7 @@
           <div class="col-lg-2 col-md-6 footer-links">
             <h4>Sayt xaritasi</h4>
             <ul>
-              <li><i class="bx bx-chevron-right"></i> <a href="{% url 'home' %}">Bosh saxifa</a></li>
+              <li><i class="bx bx-chevron-right"></i> <a href="{% url 'home' %}">Bosh sahifa</a></li>
               <li><i class="bx bx-chevron-right"></i> <a href="{% url 'about' %}">Biz haqimizda</a></li>
               <li><i class="bx bx-chevron-right"></i> <a href="{% url 'service' %}">Xizmat turlari</a></li>
               <li><i class="bx bx-chevron-right"></i> <a href="{% url 'team' %}">Xodimlar</a></li>
