@@ -1,4 +1,5 @@
 from django.db import models
+from ckeditor.fields import RichTextField
 
 
 class Xodim(models.Model):
@@ -107,3 +108,13 @@ class Contact(models.Model):
     email = models.EmailField()
     subject = models.CharField(max_length=250)
     message = models.TextField()
+
+class YangilikModel(models.Model):
+    date = models.DateField(auto_now_add=False)
+    title = models.CharField(max_length=150)
+    descriptions = models.CharField(max_length=150)
+    body = RichTextField()
+    image = models.ImageField(upload_to='images/')
+
+    def __str__(self):
+        return self.title

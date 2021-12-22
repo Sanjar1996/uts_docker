@@ -85,3 +85,18 @@ def contact(request):
         aloqa.save()
         return redirect('home')
     return render(request, 'contact.html')
+
+def yangilik(request):
+    db_news = YangilikModel.objects.all()
+    context = {
+        'baza': db_news,
+    }
+    return render(request, 'yangiliklar.html', context)
+
+
+def detailview(request, pk):
+    news = YangilikModel.objects.get(id=pk)
+    context = {
+        'news': news
+    }
+    return render(request, 'detail.html', context)

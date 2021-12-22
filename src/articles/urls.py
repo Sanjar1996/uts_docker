@@ -13,5 +13,7 @@ urlpatterns = [
     path('farmon/', farmon, name='farmon'),
     path('service/', service, name='service'),
     path('<int:pk>/', price_plan, name='price_plan'),
-    path('contact/', contact, name='contact')
+    path('contact/', contact, name='contact'),
+    path('yangiliklar/', yangilik, name='news'),
+    path('batafsil/<int:pk>/', detailview, name='detail'),
 ]
