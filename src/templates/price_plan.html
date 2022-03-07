@@ -9,7 +9,7 @@
     <section id="breadcrumbs" class="breadcrumbs">
       <div class="container">
 
-        <div class="d-flex justify-content-between align-items-center">
+        <div class="d-flex justify-content-between align-items-center mt-5">
           <h2>Byudjet ochiqligi</h2>
           <ol>
             <li><a href="{% url 'home' %}">Bosh saxifa</a></li>
@@ -31,7 +31,7 @@
               <h3>{{ data.plan }}</h3>
               <h4><span> Hisobot</span></h4>
               <div class="btn-wrap">
-                <a href="{{ data.file }}" class="btn-buy">Ko'rish</a>
+                <a href="{% if data.file %}{{ data.file.url }}{% endif %}" class="btn-buy">Ko'rish</a>
               </div>
             </div>
           </div>

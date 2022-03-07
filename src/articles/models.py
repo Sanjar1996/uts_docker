@@ -48,9 +48,9 @@ class ByudjetModel(models.Model):
 
 
 class ByudjetPlan(models.Model):
-    title = models.ManyToManyField(ByudjetModel)
+    title = models.OneToOneField(ByudjetModel, on_delete=models.CASCADE, null=False)
     plan = models.CharField(max_length=75)
-    file = models.FileField(upload_to='files/', blank=True)
+    file = models.FileField(blank=True)
 
     def __str__(self):
         return self.plan
@@ -118,3 +118,30 @@ class YangilikModel(models.Model):
 
     def __str__(self):
         return self.title
+
+
+class Place(models.Model):
+    name = models.CharField(max_length=50)
+    address = models.CharField(max_length=80)
+
+    def __str__(self):
+        return "%s the place" % self.name
+
+class Restaurant(models.Model):
+    place = models.OneToOneField(
+        Place,
+        on_delete=models.CASCADE,
+        primary_key=True,
+    )
+    serves_hot_dogs = models.BooleanField(default=False)
+    serves_pizza = models.BooleanField(default=False)
+
+    def __str__(self):
+        return "%s the restaurant" % self.place.name
+
+class Waiter(models.Model):
+    restaurant = models.ForeignKey(Restaurant, on_delete=models.CASCADE)
+    name = models.CharField(max_length=50)
+
+    def __str__(self):
+        return "%s the waiter at %s" % (self.name, self.restaurant)
