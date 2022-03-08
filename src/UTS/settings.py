@@ -143,3 +143,4 @@ CKEDITOR_CONFIGS = {
 }
 CKEDITOR_UPLOAD_PATH = 'uploads/'
 CKEDITOR_RESTRIC_BY_USER = True
+CSRF_TRUSTED_ORIGINS = ['https://uts-servis.uz/']
