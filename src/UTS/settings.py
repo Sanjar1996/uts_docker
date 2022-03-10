@@ -72,12 +72,12 @@ WSGI_APPLICATION = 'UTS.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql',
+        'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'NAME': 'uts_db',
         'USER': 'uts_user',
         'PASSWORD': 'uts_pass',
         'HOST': '127.0.0.1',
-        'PORT': '5432',
+        'PORT': '5433',
     }
 }
 
@@ -134,3 +134,4 @@ CKEDITOR_CONFIGS = {
 }
 CKEDITOR_UPLOAD_PATH = 'uploads/'
 CKEDITOR_RESTRIC_BY_USER = True
+
